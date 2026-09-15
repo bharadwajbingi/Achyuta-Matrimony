@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>Achyuta Matrimony app icon</title>
+  <rect width="64" height="64" rx="14" fill="#641F28"/>
+  <g fill="none" stroke="#FAF7F1" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter" transform="translate(32 32) scale(0.74) translate(-32 -32)">
+    <path d="M13 41 V13 H51"/>
+    <path d="M51 23 V51 H13"/>
+  </g>
+</svg>

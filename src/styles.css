@@ -1,0 +1,137 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Achyuta Matrimony design system.
+ * Dominant colour: deep wine / oxblood. Support: warm ivory + muted beige.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-deep: var(--primary-deep);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sand: var(--sand);
+  --font-display: "Anek Telugu", "Noto Sans Telugu", system-ui, sans-serif;
+  --font-sans: "Anek Telugu", "Noto Sans Telugu", system-ui, sans-serif;
+  --font-latin: "Jost", system-ui, sans-serif;
+  --font-serif-latin: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+}
+
+:root {
+  --radius: 0.25rem;
+  --background: oklch(0.973 0.009 85);
+  --foreground: oklch(0.256 0.005 330);
+  --card: oklch(0.99 0.005 85);
+  --card-foreground: oklch(0.256 0.005 330);
+  --popover: oklch(0.99 0.005 85);
+  --popover-foreground: oklch(0.256 0.005 330);
+  --primary: oklch(0.343 0.108 17.5);
+  --primary-foreground: oklch(0.975 0.012 85);
+  --primary-deep: oklch(0.258 0.086 17.5);
+  --secondary: oklch(0.906 0.018 75);
+  --secondary-foreground: oklch(0.343 0.108 17.5);
+  --muted: oklch(0.94 0.012 80);
+  --muted-foreground: oklch(0.48 0.015 40);
+  --accent: oklch(0.906 0.018 75);
+  --accent-foreground: oklch(0.343 0.108 17.5);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0.003 250);
+  --border: oklch(0.884 0.017 75);
+  --input: oklch(0.884 0.017 75);
+  --ring: oklch(0.343 0.108 17.5);
+  --sand: oklch(0.906 0.018 75);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.25;
+  }
+}
+
+@utility latin {
+  font-family: var(--font-latin);
+}
+
+/* Small uppercase English lockup / eyebrow label */
+@utility eyebrow {
+  font-family: var(--font-latin);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* Hairline rule used between editorial sections */
+@utility rule-soft {
+  border-top: 1px solid var(--color-border);
+}
+
+@utility fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
