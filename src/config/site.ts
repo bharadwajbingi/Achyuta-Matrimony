@@ -12,8 +12,9 @@ export const site = {
     fullEn: "Achyuta Matrimony",
   },
 
-  // TODO: replace with your Google Form URL
-  registrationFormUrl: "https://forms.gle/REPLACE_WITH_YOUR_FORM",
+  // Google Form URL for profile registration
+  registrationFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLScN03ftbUtwwR6c2k-uEQWysSBkVn5cEKnXoWtuZHX5RAJ8GA/viewform",
+
 
   // TODO: replace with your WhatsApp Business number (country code, no + or spaces)
   whatsappNumber: "918121052040",
