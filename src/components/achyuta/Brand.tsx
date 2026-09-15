@@ -36,11 +36,11 @@ export function Brand({
         : "text-[0.82rem] sm:text-[0.95rem] tracking-[0.44em]"
       : size === "lg"
         ? "text-[0.65rem] tracking-[0.38em]"
-        : "text-[0.5rem] sm:text-[0.55rem] tracking-[0.26em]";
+        : "text-[0.5rem] sm:text-[0.55rem] tracking-[0.34em]";
 
   return (
     <span
-      className={`inline-flex ${mark ? "flex-row items-center gap-2 sm:gap-2.5" : "flex-col items-center"} ${tone === "light" ? "text-primary-foreground" : "text-primary"}`}
+      className={`inline-flex ${mark ? "flex-row items-center gap-2.5 sm:gap-3" : "flex-col items-center"} ${tone === "light" ? "text-primary-foreground" : "text-primary"}`}
       aria-label="Achyuta Matrimony"
     >
       {mark && (
@@ -52,20 +52,22 @@ export function Brand({
           loading={size === "sm" ? "eager" : "lazy"}
         />
       )}
-      <span
-        className={`flex flex-col ${mark ? "items-start" : "items-center"} justify-center leading-none`}
-      >
+      <span className="flex flex-col items-center justify-center leading-none text-center">
         {script === "telugu" ? (
           <span className={`${wordSize} font-display font-semibold tracking-tight`}>అచ్యుత</span>
         ) : (
           <span className={`${wordSize} latin font-bold tracking-tight`}>Achyuta</span>
         )}
-        <span className={`latin mt-1 font-semibold uppercase ${subSize} text-primary/90`}>
+        <span
+          className={`latin mt-1 font-semibold uppercase ${subSize} text-primary/90 text-center`}
+          style={{ textIndent: "0.34em" }}
+        >
           Matrimony
         </span>
       </span>
     </span>
   );
 }
+
 
 
