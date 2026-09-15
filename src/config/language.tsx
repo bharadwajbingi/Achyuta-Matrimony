@@ -14,8 +14,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   // Read the saved preference after hydration to avoid a server/client mismatch.
   useEffect(() => {
-    const saved = window.localStorage.getItem(STORAGE_KEY);
-    if (saved === "en" || saved === "te") setLangState(saved);
+    try {
+      const saved = window.localStorage.getItem(STORAGE_KEY);
+      if (saved === "en" || saved === "te") setLangState(saved);
+    } catch {
+      // Ignore storage access errors (e.g. Incognito or blocked storage)
+    }
   }, []);
 
   useEffect(() => {
@@ -24,7 +28,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const setLang = (l: Lang) => {
     setLangState(l);
-    window.localStorage.setItem(STORAGE_KEY, l);
+    try {
+      window.localStorage.setItem(STORAGE_KEY, l);
+    } catch {
+      // Ignore storage write errors
+    }
   };
 
   return (
